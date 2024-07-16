@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div>
+
+      <img src="" id="dinner"/>
+      <h3>추가 레시피</h3>
+      <p>[참치]나 [꽁치]를 넣어 다른 맛으로도 즐겨보세요. <br>
+        김치가 너무 익어 신맛이 강하면 설탕 약간으로 맛을 조절해주세요.
+      </p>
+    </div>
+
+    <script>
+      // 재료 함수
+      let water = "물 500g";
+      let pork = "돼지고기 250g";
+      let main = "신김치 200g";
+      let main2 = "김칫국물 5큰술";
+      let onion = "양파 반개";
+      let main3 = "고춧가루 1큰술";
+      let soy = "간장 반큰술";
+      let garlic = "다진마늘 1큰술";
+      let tofu = "두부 반 모";
+
+      let dinner = cookKimchi(
+        water,
+        pork,
+        main,
+        main2,
+        onion,
+        main3,
+        soy,
+        garlic
+      );
+
+      function cookKimchi(water, pork, main, main2, onion, main3, soy, garlic) {
+        alert("냄비에 식용유와 " + garlic + "을 넣고");
+        alert(pork + "과 함께 겉면이 하얗게 익을때까지 볶아줍니다.");
+        alert(
+          main + "를 더해 잠시 볶고 " + water + "과 " + main2 + "을 넣어줍니다."
+        );
+        alert(main3 + "과 " + soy + "을 넣어 간을 맞춰줍니다");
+        alert(
+          "센불로 보글보글 끊기 시작하면 " + onion + "를 마지막으로 넣어줍니다"
+        );
+        alert(
+          "국물이 넘치지 않도록 주의 해주시고 " +
+            tofu +
+            "를 올려 조금만 더 끓여주면 완성~"
+        );
+        let src =
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKO0QbLY6zdFh2epQtjhoU0a7_dgrmhETJLg&s";
+        return src;
+      }
+
+      //이미지
+      let img = document.getElementById("dinner");
+      img.src = dinner;
+    </script>
+  </body>
+</html>

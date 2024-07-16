@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>2. 수를 입력받아 원하는 만큼 별 출력하기</h3>
+    <hr />
+
+    <script>
+       printStar();
+        function printStar(){
+            let star = prompt("숫자를 입력하세요", "");
+            let num = parseInt(star);
+            if (isNaN(num) || num <= 0) {
+                alert("1이상의 숫자를 입력해주세요.");
+                return;
+            }
+            for (let i = 0; i < num; i++) {
+                document.write("* ");
+            }
+        }
+
+    </script>
+  </body>
+</html>
