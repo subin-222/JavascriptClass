@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>1~19까지 홀수 합</h3>
+    <script>
+      //문졔 : 1+3+5+7+9+11+13+15+17+19
+
+      //순번 1 2 3 4 5 6 7 8 9 10
+      //항 1 3 5 7 9 11 13 15 17 18
+
+      let a = 1;
+      let sum = 0; 
+
+      sum = sum + a;
+
+      a = a + 2; 
+      sum = sum + a; 
+
+      a = a + 2; 
+      sum = sum + a; 
+
+      a = a + 2;
+      sum = sum + a;
+
+      a = a + 2;
+      sum = sum + a;
+
+      a = a + 2;
+      sum = sum + a;
+
+      a = a + 2;
+      sum = sum + a;
+
+      a = a + 2;
+      sum = sum + a;
+
+      a = a + 2;
+      sum = sum + a;
+
+      a = a + 2;
+      sum = sum + a;
+
+      alert(sum);
+
+      //반복문으로 바꾸기🎈🎈🎈
+      a = 1;
+      sum = 1;
+
+      for (let i = 1; i <= 9; i++) {
+        a = a + 2;
+        sum = sum + a;
+      }
+
+      alert(sum);
+
+    </script>
+  </body>
+</html>

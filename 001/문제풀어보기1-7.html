@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 7.  카드사용금액을 입력받아  50만원이상  "vvip"  30이상이면 "vip"  나머지 "bronze" 출력 -->
+
+    <script>
+      
+      let number= prompt("카드사용금액을 입력해주세요.");
+
+      if (number >= 500000) {
+        alert("vvip");
+      } else if (number >= 300000) {
+        alert("vip");
+      } else if (number < 300000) {
+        alert("bronze");
+      }
+    </script>
+  </body>
+</html>

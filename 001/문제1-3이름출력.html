@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>수를 입력받아 원하는 만큼 내이름 출력하기</h3>
+    <hr>
+
+    <script>
+        
+        printName();
+        function printName(){
+            let yours = prompt("이름을 입력해주세요.") 
+            let name = prompt("숫자를 입력하세요.", "");
+            let num = parseInt(name);
+            for (let i = 0; i < num; i++) {
+                document.write(yours+"<br>");
+            }
+        }
+    </script>
+</body>
+</html>
