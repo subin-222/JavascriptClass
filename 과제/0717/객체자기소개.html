@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        const person = {
+            name: "송수빈",
+            age: 24,
+            hobbies: ["게임", "영화", "여행"],
+            city: "서울",
+            introduce: function () {
+                alert(
+                    "안녕하세요, 저는 " + this.name + "입니다. " + this.age + "세이고, 사는 곳은 " + this.city + "입니다."
+                );
+            },
+        };
+    
+        // 정보 출력
+        console.log("이름:", person.name);
+        console.log("나이:", person.age);
+        console.log("취미:", person.hobbies.join(", "));
+        console.log("주소:", person.city);
+    
+        // 자기 소개
+        person.introduce();
+    </script>
+  </body>
+</html>

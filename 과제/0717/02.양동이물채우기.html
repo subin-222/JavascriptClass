@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bucket3{
+            width: 300px;
+            height: 300px;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+        .bucket5{
+            width: 500px;
+            height: 500px;
+            border: 1px solid gray;
+            border-top: none;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+        .fill {
+            height: 100px;
+            background-color: skyblue;
+            border: 1px solid black;
+        }
+
+        .bucket3 div, .bucket5 div {
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bucket3">
+        3L 양동이
+        <div class="water"></div>
+        <div class="water"></div>
+        <div class="water"></div>
+       
+    </div>
+
+    <div class="bucket5">
+        5L 양동이
+        <div class="water"></div>
+        <div class="water"></div>
+        <div class="water"></div>
+        <div class="water"></div>
+        <div class="water"></div>
+      
+    </div>
+
+    <button onclick="emptyWater3()">3리터 양동이 비우기</button>
+    <button onclick="getWater3()">3리터 양동이 채우기</button>
+    <button onclick="toWater5()">5리터 양동이로 물붓기</button>
+    <button onclick="emptyWater5()">5리터 양동이 비우기</button>
+    <button onclick="getWater5()">5리터 양동이 채우기</button>
+    <button onclick="toWater3()">5리터 양동이로 물붓기</button>
+
+    <script>
+        let bucket3 = 0;
+        let bucket5 = 0;
+
+
+        function getWater3(){
+            let bucket3All = document.querySelectorAll(".bucket3 div");
+            for(let i=0; i<bucket3All.length; i++){
+                let item = bucket3All[i];
+                item.classList.remove("fill");
+            }
+            bucket3 = 0;
+        }
+        
+        function emptyWater3(){
+            let bucket3All = document.querySelectorAll(".bucket3 div");
+            for(let i=0; i<bucket3All.length; i++){
+                let item = bucket3All[i];
+                item.classList.remove("fill");
+            }
+            bucket3 = 0;
+        }
+
+        function toWater5(){
+            let waterQ;
+
+            let bucket5Full =5-bucket5;
+            if(bucket3>bucket5Full){
+                waterQ = bucket5Full;
+            }else {
+                waterQ = bucket3;
+            }
+        }
+
+        bucket5 += waterQ;
+        bucket3 -= waterQ;
+
+        let bucket3All = document.querySelectorAll(".bucket3 div");
+        for(let i=0; i<bucket3All.length; i++){
+            let item = bucket3All[i];
+            if(i<bucket3){
+                item.classList.add("fill");
+            }else{
+                item.classList.remove("fill");
+            }
+        }
+
+        let bucket5All = document.querySelectorAll(".bucket5 div");
+        for(let i=0; i<bucket5All.length; i++){
+            let item = bucket5All[i];
+            if(i<bucket5){
+                item.classList.add("fill");
+            }else{
+                item.classList.remove("fill");
+            }
+        }
+
+        function waterEmpty5(){
+            let bucket5All = document.querySelectorAll(".bucket5 div");
+            for(let i=0; i<bucket5All.length; i++){
+                let item = bucket5All[i];
+                item.classList.remove("fill");
+            }
+            bucket5 = 0;
+        }
+
+        function getWater5(){
+            let bucket5All = document.querySelectorAll(".bucket5 div");
+            for(let i=0; i<bucket5All.length; i++){
+                let item = bucket5All[i];
+                item.classList.add("fill");
+            }
+            bucket5 = 5;
+        }
+
+        function toWater3(){
+            let transferAmount;
+            if(bucket5<3-bucket3){
+                transferAmount = bucket5;
+            }else{
+                transferAmount = 3-bucket3;
+            }
+
+            bucket3 += transferAmount;
+            bucket5 -= transferAmount;
+
+            let bucket3All = document.querySelectorAll(".bucket3 div");
+            for(let i=0; i<bucket3All.length; i++){
+                let item = bucket3All[i];
+                if(i<bucket3){
+                    item.classList.add("fill");
+                }else{
+                    item.classList.remove("fill");
+                }
+            }
+
+            let bucket5All = document.querySelectorAll(".bucket5 div");
+            for(let i=0; i<bucket5All.length; i++){
+                let item = bucket5All[i];
+                if(i<bucket5){
+                    item.classList.add("fill");
+                }else{
+                    item.classList.remove("fill");
+                }
+            }
+        }
+
+
+    </script>
+</body>
+</html>

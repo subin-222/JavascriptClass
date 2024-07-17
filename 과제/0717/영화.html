@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        button{
+            border-style: none;
+            background-color: lightpink;
+            cursor: pointer;
+            width: 100px;
+            height: 100px;
+            border-radius: 30%;
+        }
+        button:hover{
+            background-color: hotpink;
+        }
+    </style>
+  </head>
+  <body>
+
+
+    
+    <button onclick="movie()">영화추천</button>
+    <script>
+      function movie() {
+        const movieList = [
+          ["기생충", "범죄도시", "실미도"],
+          ["변호인", "해운대", "부산행"],
+          ["부산행", "신과함께", "광해"],
+          ["암살", "7번방의선물", "도둑들"],
+          ["해리포터", "어벤져스", "아이언맨"],
+          ["스파이더맨", "데드풀", "타이타닉"],
+          ["악마는프라다를입는다", "인턴", "노트북"],
+          ["존윅", "인셉션", "인터스텔라"],
+        ];
+
+        const rowIndex = Math.floor(Math.random() * movieList.length);
+        const colIndex = Math.floor(Math.random() * movieList[0].length);
+        alert("행" + rowIndex);
+        alert("열" + colIndex);
+        alert(` [
+       [  "기생충", "범죄도시", "실미도"]  , 
+       [ "변호인", "해운대","부산행"] ,
+       ["부산행", "신과함께", "광해" ] ,
+       ["암살","7번방의선물","도둑들" ]  ,
+       ["해리포터","어벤져스","아이언맨"] ,
+       [ "스파이더맨","데드풀","타이타닉" ],
+       ["악마는프라다를입는다","인턴","노트북"],
+       ["존윅","인셉션","인터스텔라"]
+    ]`);
+        alert(movieList[rowIndex][colIndex]);
+      }
+    </script>
+  </body>
+</html>
