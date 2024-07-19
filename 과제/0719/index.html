@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header{
+            height: 100px;
+            background-color: rgb(245, 248, 248);
+
+            position: relative;
+        }
+        .title{
+            left: 10px;
+            top: 20px;
+            position: absolute;
+        }
+        .search{
+          right: 10px;
+          bottom: 20px;
+          position: absolute;
+          display: flex;
+        }
+        .search input{
+            outline: none;
+            border: none;
+        }
+        .searchBtn{
+            width: 40px;
+            height: 40px;
+            background-image: url(./images/images/검색.png);
+            background-size: cover;
+        }
+        nav{
+            height: 40px;
+            padding: 20px;
+            background-color: rgb(232, 243, 243);
+        }
+        section{
+            height: 600px;
+            border: 1px solid black;
+            
+        }
+        li{
+            width: 200px;
+            padding: 20px;
+            margin: 0 auto;
+            border: 0.5px solid rgb(255, 241, 241);
+        }
+        footer{
+            height: 400px;
+            background-color: rgb(232, 239, 239);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="title"><img src="images/images/logo.png"></div>
+            <div class="search">
+                <input type="text"><div class="searchBtn"></div>
+            </div>
+        </header>
+        <nav></nav>
+        <section>
+            <ul>
+                <div class="box">bigdata</div>
+                <li>
+                    <img src="./images/images/img01.png" alt="">
+                    <p>프로젝트기반 빅데이터분석 과정</p>
+                </li>
+            </ul>
+        </section>
+        <footer>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </footer>
+    </div>
+</body>
+</html>
