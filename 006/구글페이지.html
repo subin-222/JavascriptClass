@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul {
+        list-style: none;
+      }
+
+      nav {
+        height: 100px;
+        background-color: rgb(226, 239, 245);
+        /* border: 1px solid black; */
+
+        margin-top: 100px;
+        /* 부모로 지정, 부모가 높이가 있어야 함 🎈 */
+        position: relative;
+      }
+      .menu {
+        position: absolute; /* 크기가 내용만큼 줄어듬 */
+        right: 100px;
+        /* border: 1px solid black; */
+        display: flex;
+        align-items: center; /* 수직 가운데 */
+
+        height: 100px;
+      }
+      .item {
+        font-size: 12px;
+        text-align: center;
+        border-radius: 50%;
+        border: 0.5px solid lightgray;
+      }
+      .item1 {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+      }
+      .item1:hover {
+        background-color: skyblue;
+      }
+      .item2 {
+        width: 40px;
+        height: 40px;
+        background-image: url(https://lh3.googleusercontent.com/ogw/ADGmqu_sKQ74r14XW5bWUAIRoXn7hut8HTvtMAAH_iD3EA=s64-c-mo);
+        background-size: cover;
+        background-position: center;
+      }
+      .item2:hover {
+        box-shadow: 0px 0px 10px 0px rgb(83, 173, 106);
+      }
+
+      .logo_title {
+        /* border: 1px solid black; */
+        text-align: center;
+
+        margin-top: 100px;
+      }
+
+      .logo_title img {
+        width: 280px;
+        height: 100px;
+      }
+
+      .search {
+        /* border: 1px solid black; */
+        margin-top: 100px;
+      }
+      .search_bar {
+        width: 600px;
+        height: 60px;
+        border: 1px solid black;
+        border-radius: 30px;
+
+        margin: 0 auto;
+      }
+      .search_bar input {
+        width: 70%;
+        height: 40px;
+        margin-left: 20px;
+        margin-top: 10px;
+
+        border: none;
+        outline: none;
+      }
+      .search_list {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- nav영역 -->
+    <nav>
+      <div class="menu">
+        <div class="item item1">Gmail</div>
+        <div class="item item1">로그인</div>
+        <div class="item item1">이미지</div>
+        <div class="item item2"></div>
+      </div>
+    </nav>
+
+    <!-- 로고 타이틀 영역 -->
+    <div class="logo_title">
+      <img
+        src="https://www.google.co.kr/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+      />
+    </div>
+
+    <!-- 검색바 영역 -->
+    <div class="search">
+      <div class="search_bar">
+        <input type="text" onfocus="showList()" onblur="hideList()" />
+        <!-- 검색목록 영역 -->
+        <ul class="search_list">
+          <li>모자</li>
+          <li>선크림</li>
+          <li>반바지</li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      function showList() {
+        // alert("dfdf");
+        // 검색목록 영역 보이기
+        // 검색바의 크기를 auto로 설정(내용만큼 크기가 결정됨)
+        let search_list = document.querySelector(".search_list");
+        let search_bar = document.querySelector(".search_bar");
+        search_list.style.display = "block";
+        search_bar.style.height = "auto";
+      }
+
+      function hideList() {
+        // alert("hide");
+
+        setTimeout(function () {
+          let search_list = document.querySelector(".search_list");
+          let search_bar = document.querySelector(".search_bar");
+
+          search_list.style.display = "none";
+          search_bar.style.height = "60px";
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>
