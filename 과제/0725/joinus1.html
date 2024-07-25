@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      header {
+        height: 100px;
+        background-color: rgb(245, 248, 248);
+        position: relative;
+        display: flex;
+      }
+      .title {
+        left: 10px;
+        top: 20px;
+        position: absolute;
+        top: 10px;
+      }
+      .search {
+        right: 10px;
+        bottom: 20px;
+        position: absolute;
+        display: flex;
+        border: 1px solid black;
+      }
+      .search input {
+        height: 50px;
+        width: 200px;
+        border-style: none;
+      }
+      .search img {
+        height: 50px;
+        width: 50px;
+        background-position: center;
+        background-size: cover;
+      }
+      nav {
+        height: 40px;
+        padding: 20px;
+        background-color: rgb(232, 243, 243);
+      }
+      nav a {
+        text-decoration: none;
+        color: black;
+      }
+      table{
+        width: 800px;
+        border: 1px solid rgb(227, 216, 216);
+        border-collapse: collapse;
+        margin: 0 auto;
+        margin-top: 20px;
+      }
+      caption{
+        text-align: center;
+      }
+      td{
+        border: 1px solid rgb(227, 216, 216);
+        font-size: 12px;
+      }
+      tr{
+        height: 40px;
+      }
+      table tr:nth-child(3){
+        height: 70px;
+      }
+      table tr:nth-child(7){
+        height: 70px;
+        text-align: center;
+      }
+      table input{
+        width: 150px;
+        height: 30px;
+      }
+      table select{
+        width: 150px;
+        height: 30px;
+      }
+      table button{
+        width: 150px;
+        height: 40px;
+        border: 0px;
+      }
+      span{
+        color: red;
+      }
+    </style>
+
+    <script>
+        function check(){
+            let frm = document.frm;
+            let username = document.username;
+            let userid = document.userid;
+            let userpw_1 = document.userpw_1;
+            let userpw_2 = document.userpw_2;
+            let useremail = document.useremail;
+            let useremail2 = document.useremail2;
+            if(username ==""){
+                alert("이름을 입력하세요");
+                username.focus();
+            }else if(userid == ""){
+                alert("아이디를 입력하세요");
+                userid.focus();
+            }else if(userpw_1 == ""){
+                alert("비밀번호를 입력하세요");
+                userpw_1.focus();
+            }else if(userpw_2 == ""){
+                alert("비밀번호확인을 설정하세요");
+                userpw_2.focus();
+            }else if(useremail == ""){
+                alert("아이디를 입력하세요");
+                useremail.focus();
+            }else if(useremail2 == ""){
+                alert("아이디를 입력하세요");
+                useremail2.focus();
+            }else{
+                alert("회원가입 성공")
+            }
+
+        }
+        function setDomain(){
+            let frm = document.frm;
+            let op = document.op;
+            let useremail2=frm.useremail2;
+            let optext = op.optionsalert[op.selectedTndex].text;
+            let opvalue = op.optionsalert[op.selectedTndex].value;
+            useremail2.value=optext;
+        }
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="title">
+        <img src="./images/images/logo.png" alt="" />
+      </div>
+      <div class="search">
+        <input type="text" />
+        <img src="./images/images/검색.png" alt="" />
+      </div>
+    </header>
+    <nav>
+      <a href="login1.html">로그인</a>
+      <a href="joinus1.html">회원가입</a>
+      <a href="login1.html">홈으로</a>
+    </nav>
+    <section>
+      <form name="frm" method="post">
+        <table>
+            <caption>
+                회원가입
+              </caption>
+          <tr>
+            <td>이름</td>
+            <td>
+                <input type="text" name="username">
+            </td>
+          </tr>
+          <tr>
+            <td>아이디</td>
+            <td>
+                <input type="text" name="userid">
+                <button>중복확인</button>
+            </td>
+          </tr>
+          <tr>
+            <td>비밀번호</td>
+            <td>
+                <input type="password" name="userpw_1"><br>
+                <span>비밀번호 유의사항</span>
+            </td>
+          </tr>
+          <tr>
+            <td>비밀번호확인</td>
+            <td>
+                <input type="password" name="userpw_2">
+            </td>
+          </tr>
+          <tr>
+            <td>이메일</td>
+            <td>
+                <input type="text" name="useremail">@ <input type="text" name="useremail2">
+                <select onchange="setDomain()" name="op">
+                    <option value="">선택하세요</option>
+                    <option value="">gmail.com</option>
+                    <option value="">naver.com</option>
+                </select>
+                <button>중복확인</button>
+            </td>
+          </tr>
+          <tr>
+            <td>학년/반</td>
+            <td>
+                <select>
+                    <option value="">선택하세요</option>
+                    <option value="">1</option>
+                    <option value="">2</option>
+                </select>
+                학년
+                <select>
+                    <option value="">선택하세요</option>
+                    <option value="">1</option>
+                    <option value="">2</option>
+                </select>
+                반
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+            <button onclick="check()">가입</button>
+            <button>취소</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </section>
+  </body>
+</html>
